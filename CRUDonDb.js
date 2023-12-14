@@ -1,10 +1,13 @@
 const User=require("./UsersTable");
 
 const addUser=async (username,password)=>{
-    let user=new User();
-    user.username=username;
-    user.password=password;
+    let user=new User({
+        username:username,
+        password:password
+    });
+
     await user.save();
+    
     return user;
 }
 

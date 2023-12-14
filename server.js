@@ -4,17 +4,15 @@ const {addUser,retrieveUsers,delUser,updateUser}=require("./CRUDonDb");
 
 const app=express();
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get("/",(req,res)=>{
-    res.sendFile(__dirname + "/index.html");
-})
+// app.get("/",(req,res)=>{
+//     res.sendFile(__dirname + "/index.html");
+// })
 
-app.get("/CSSFile",(req,res)=>{
-    res.sendFile(__dirname + "/styles.css");
-})
-
-
+// app.get("/CSSFile",(req,res)=>{
+//     res.sendFile(__dirname + "/styles.css");
+// })
 
 mongoose.set('strictQuery', true);
 mongoose.connect("mongodb://localhost:27017/FirstConnection",{
@@ -23,15 +21,15 @@ mongoose.connect("mongodb://localhost:27017/FirstConnection",{
 })
 .then(async()=>{
     console.log("Connection Successfull");
-        
-    let user1=await addUser("abcdef","hello1245");
-    console.log(user1);
+    
+    // let user1=await addUser("abc","hello1234");
+    // console.log(user1);
     let user=await retrieveUsers();
     console.log(user);
-    let del=await delUser("656c56f5cb655205af7dce1f");
-    console.log(del);
-    let update=await updateUser("656c56f7205d5770dcdfdb82","b4s17","pass123");
-    console.log(update);
+    // let del=await delUser("657a8a646c4ca6ddb3da0dcd");
+    // console.log(del);
+    // let update=await updateUser("657a8a687c59357846847e9b","lol","789");
+    // console.log(update);
 
 }).catch((err)=>{
     console.log("Connection Failed");

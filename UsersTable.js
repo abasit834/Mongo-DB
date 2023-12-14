@@ -1,14 +1,14 @@
 const mongoose=require("mongoose");
 
 const UserSchema=mongoose.Schema({
-    email :{
+    username :{
     type: String,
     lowercase: true,
-    required:true
+    required:true,
     },
     password: {
         type:String,
-        required:true
+        required:true,
     }
 });
 
